@@ -2,7 +2,7 @@ package Microservice.FoodAPI.Entity;
 
 import java.math.BigDecimal;
 
-import ch.qos.logback.core.status.Status;
+import Microservice.FoodAPI.Entity.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -22,7 +22,7 @@ import lombok.Data;
 public class Pagamentos {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
@@ -49,9 +49,10 @@ public class Pagamentos {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    
     @NotNull
     private Long pedidoID;
-    
+
     @NotNull
     private Long formaDePagamentoID;
 

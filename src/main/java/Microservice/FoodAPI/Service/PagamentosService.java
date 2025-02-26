@@ -28,7 +28,6 @@ public class PagamentosService {
         dto.setId(pagamento.getId());
         dto.setValor(pagamento.getValor());
         dto.setFormaDePagamentoID(pagamento.getFormaDePagamentoID());
-        dto.setStatus(pagamento.getStatus());
         return dto;
     } //converter tudo para Dto (segurnaça dos meus dados)
 
@@ -41,7 +40,6 @@ public class PagamentosService {
         Pagamentos pagamento = new Pagamentos();
         pagamento.setValor(pagamentoDTO.getValor());
         pagamento.setFormaDePagamentoID(pagamentoDTO.getFormaDePagamentoID());
-        pagamento.setStatus(pagamentoDTO.getStatus());
         Pagamentos pagamentoSalvo = pagamentosRepository.save(pagamento);
         return convertToDTO(pagamentoSalvo);
     }
@@ -52,7 +50,6 @@ public class PagamentosService {
         pagamento.setValor(pagamentoDTO.getValor());
         pagamento.setFormaDePagamentoID(pagamentoDTO.getFormaDePagamentoID());
         pagamento.setId(pagamento.getId());
-        pagamento.setStatus(pagamentoDTO.getStatus());
         Pagamentos pagamentoSalvo = pagamentosRepository.save(pagamento);
         return convertToDTO(pagamentoSalvo);
     }

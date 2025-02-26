@@ -37,7 +37,7 @@ public class PagamentoController {
         return pagamentoService.criarPagamento(pagamentoDTO);
     }
 
-    @DeleteMapping
+    @DeleteMapping("{id}")
     public void deletar(@PathVariable Long id) {
         pagamentoService.deletarPagamento(id);
     }
